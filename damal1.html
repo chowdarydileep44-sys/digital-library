@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page & Petal digital library and online bookstore.">
+    <title>Page & Petal | Digital Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">PAGE <span>&</span> PETAL</a>
+
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#books">Books</a>
+            <a href="#catalog">Catalog</a>
+            <a href="#rules">Library Rules</a>
+        </nav>
+
+        <a href="#membership" class="header-button">Join Library ↗</a>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+                <h1>Stories that stay.<br><span>Ideas that grow.</span></h1>
+                <p class="hero-description">
+                    Explore timeless classics, discover new authors, and find
+                    the perfect book for your next big idea.
+                </p>
+                <div class="hero-actions">
+                    <a href="#books" class="primary-button">Explore Books ↗</a>
+                    <a href="#catalog" class="secondary-button">View Catalog</a>
+                </div>
+                <div class="hero-stats">
+                    <div><strong>2,500+</strong><span>Books</span></div>
+                    <div><strong>180+</strong><span>Authors</span></div>
+                    <div><strong>24/7</strong><span>Explore online</span></div>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="hero-circle"></div>
+                <div class="hero-note">A LITTLE READING<br>GOES A LONG WAY ✦</div>
+                <img
+                    src="https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+                    alt="Atomic Habits by James Clear book cover"
+                    class="hero-book"
+                >
+                <div class="floating-note">Your next favorite<br>book is waiting.</div>
+            </div>
+        </section>
+
+        <!-- Search and Filter -->
+        <section class="search-section" aria-label="Find a book">
+            <div class="search-heading">
+                <div>
+                    <p class="eyebrow">THE BOOK FINDER</p>
+                    <h2>What are you <span>in the mood for?</span></h2>
+                </div>
+                <p>Search by title, author, or ISBN.</p>
+            </div>
+
+            <div class="filters">
+                <label class="search-box">
+                    <span aria-hidden="true">⌕</span>
+                    <input type="search" id="searchInput"
+                           placeholder="Search books or authors..."
+                           aria-label="Search books or authors">
+                </label>
+
+                <select id="categoryFilter" aria-label="Filter by category">
+                    <option value="all">All Categories</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="self-help">Self-Help</option>
+                    <option value="technology">Technology</option>
+                    <option value="classic">Classics</option>
+                </select>
+
+                <select id="availabilityFilter" aria-label="Filter by availability">
+                    <option value="all">All Availability</option>
+                    <option value="available">Available</option>
+                    <option value="borrowed">Currently Borrowed</option>
+                </select>
+
+                <button type="button" id="resetFilters" class="reset-button">
+                    Reset ↺
+                </button>
+            </div>
+            <p id="resultCount" class="result-count" aria-live="polite"></p>
+        </section>
+
+        <!-- Book Categories -->
+        <section class="section categories-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">BROWSE YOUR INTERESTS</p>
+                    <h2>Explore <span>categories.</span></h2>
+                </div>
+                <p>Good books for every kind of curious mind.</p>
+            </div>
+
+            <div class="category-grid">
+                <button class="category-card yellow-card" data-category="fiction">
+                    <span class="category-icon">✧</span>
+                    <strong>Fiction</strong>
+                    <span>Stories & imagination ↗</span>
+                </button>
+                <button class="category-card pink-card" data-category="self-help">
+                    <span class="category-icon">✿</span>
+                    <strong>Self-Help</strong>
+                    <span>Grow every day ↗</span>
+                </button>
+                <button class="category-card white-card" data-category="technology">
+                    <span class="category-icon">⌘</span>
+                    <strong>Technology</strong>
+                    <span>Code & innovation ↗</span>
+                </button>
+                <button class="category-card cream-card" data-category="classic">
+                    <span class="category-icon">❝</span>
+                    <strong>Classics</strong>
+                    <span>Timeless literature ↗</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Books -->
+        <section class="section books-section" id="books">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">HANDPICKED FOR YOU</p>
+                    <h2>Books worth <span>your time.</span></h2>
+                </div>
+                <span class="collection-label">THE READER'S EDITION — 2026</span>
+            </div>
+
+            <div class="book-grid" id="bookGrid">
+
+                <article class="book-card" data-category="self-help"
+                         data-status="available">
+                    <div class="book-cover cover-yellow">
+                        <span class="cover-label">BESTSELLER</span>
+                        <img src="https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+                             alt="Atomic Habits book cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <p class="book-category">SELF-HELP</p>
+                        <h3>Atomic Habits</h3>
+                        <p class="author">by James Clear</p>
+                        <p class="book-description">Build better habits, one small step at a time.</p>
+                        <div class="book-meta">
+                            <span class="price">₹399</span>
+                            <span class="status available">Available</span>
+                        </div>
+                        <p class="isbn">ISBN: 9780735211292</p>
+                    </div>
+                </article>
+
+                <article class="book-card" data-category="fiction"
+                         data-status="available">
+                    <div class="book-cover cover-pink">
+                        <span class="cover-label">READER FAVOURITE</span>
+                        <img src="https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg"
+                             alt="The Alchemist book cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <p class="book-category">FICTION</p>
+                        <h3>The Alchemist</h3>
+                        <p class="author">by Paulo Coelho</p>
+                        <p class="book-description">A journey about dreams, courage and destiny.</p>
+                        <div class="book-meta">
+                            <span class="price">₹299</span>
+                            <span class="status available">Available</span>
+                        </div>
+                        <p class="isbn">ISBN: 9780062315007</p>
+                    </div>
+                </article>
+
+                <article class="book-card" data-category="technology"
+                         data-status="borrowed">
+                    <div class="book-cover cover-white">
+                        <span class="cover-label">TECH PICK</span>
+                        <img src="https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg"
+                             alt="Clean Code book cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <p class="book-category">TECHNOLOGY</p>
+                        <h3>Clean Code</h3>
+                        <p class="author">by Robert C. Martin</p>
+                        <p class="book-description">Practical principles for writing readable code.</p>
+                        <div class="book-meta">
+                            <span class="price">₹599</span>
+                            <span class="status borrowed">Borrowed</span>
+                        </div>
+                        <p class="isbn">ISBN: 9780132350884</p>
+                    </div>
+                </article>
+
+                <article class="book-card" data-category="classic"
+                         data-status="available">
+                    <div class="book-cover cover-yellow">
+                        <span class="cover-label">TIMELESS CLASSIC</span>
+                        <img src="https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg"
+                             alt="Pride and Prejudice book cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <p class="book-category">CLASSICS</p>
+                        <h3>Pride and Prejudice</h3>
+                        <p class="author">by Jane Austen</p>
+                        <p class="book-description">A celebrated novel about love and first impressions.</p>
+                        <div class="book-meta">
+                            <span class="price">₹249</span>
+                            <span class="status available">Available</span>
+                        </div>
+                        <p class="isbn">ISBN: 9780141439518</p>
+                    </div>
+                </article>
+
+                <article class="book-card" data-category="fiction"
+                         data-status="borrowed">
+                    <div class="book-cover cover-pink">
+                        <span class="cover-label">MUST READ</span>
+                        <img src="https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg"
+                             alt="The Great Gatsby book cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <p class="book-category">FICTION</p>
+                        <h3>The Great Gatsby</h3>
+                        <p class="author">by F. Scott Fitzgerald</p>
+                        <p class="book-description">A classic tale of ambition, wealth and longing.</p>
+                        <div class="book-meta">
+                            <span class="price">₹279</span>
+                            <span class="status borrowed">Borrowed</span>
+                        </div>
+                        <p class="isbn">ISBN: 9780743273565</p>
+                    </div>
+                </article>
+
+                <article class="book-card" data-category="classic"
+                         data-status="available">
+                    <div class="book-cover cover-white">
+                        <span class="cover-label">EDITOR'S PICK</span>
+                        <img src="https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg"
+                             alt="To Kill a Mockingbird book cover" loading="lazy">
+                    </div>
+                    <div class="book-info">
+                        <p class="book-category">CLASSICS</p>
+                        <h3>To Kill a Mockingbird</h3>
+                        <p class="author">by Harper Lee</p>
+                        <p class="book-description">A powerful story about justice and empathy.</p>
+                        <div class="book-meta">
+                            <span class="price">₹329</span>
+                            <span class="status available">Available</span>
+                        </div>
+                        <p class="isbn">ISBN: 9780061120084</p>
+                    </div>
+                </article>
+            </div>
+
+            <div id="noResults" class="no-results" hidden>
+                <h3>No books found!</h3>
+                <p>Try another title, author, or category.</p>
+            </div>
+        </section>
+
+        <!-- Structured Catalog Table -->
+        <section class="section catalog-section" id="catalog">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">THE COMPLETE COLLECTION</p>
+                    <h2>Library <span>catalog.</span></h2>
+                </div>
+                <p>Browse book details in one place.</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <caption>Sample library inventory and retail prices</caption>
+                    <thead>
+                        <tr>
+                            <th>Book / ISBN</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody id="catalogBody">
+                        <tr data-category="self-help" data-status="available">
+                            <td><strong>Atomic Habits</strong><small>9780735211292</small></td>
+                            <td>James Clear</td><td>Self-Help</td><td>₹399</td>
+                            <td><span class="table-status available">Available</span></td>
+                        </tr>
+                        <tr data-category="fiction" data-status="available">
+                            <td><strong>The Alchemist</strong><small>9780062315007</small></td>
+                            <td>Paulo Coelho</td><td>Fiction</td><td>₹299</td>
+                            <td><span class="table-status available">Available</span></td>
+                        </tr>
+                        <tr data-category="technology" data-status="borrowed">
+                            <td><strong>Clean Code</strong><small>9780132350884</small></td>
+                            <td>Robert C. Martin</td><td>Technology</td><td>₹599</td>
+                            <td><span class="table-status borrowed">Borrowed</span></td>
+                        </tr>
+                        <tr data-category="classic" data-status="available">
+                            <td><strong>Pride and Prejudice</strong><small>9780141439518</small></td>
+                            <td>Jane Austen</td><td>Classics</td><td>₹249</td>
+                            <td><span class="table-status available">Available</span></td>
+                        </tr>
+                        <tr data-category="fiction" data-status="borrowed">
+                            <td><strong>The Great Gatsby</strong><small>9780743273565</small></td>
+                            <td>F. Scott Fitzgerald</td><td>Fiction</td><td>₹279</td>
+                            <td><span class="table-status borrowed">Borrowed</span></td>
+                        </tr>
+                        <tr data-category="classic" data-status="available">
+                            <td><strong>To Kill a Mockingbird</strong><small>9780061120084</small></td>
+                            <td>Harper Lee</td><td>Classics</td><td>₹329</td>
+                            <td><span class="table-status available">Available</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="table-note">Prices and stock labels are illustrative project data, not live store inventory.</p>
+        </section>
+
+        <!-- Library Rules -->
+        <section class="section rules-section" id="rules">
+            <div class="rules-intro">
+                <p class="eyebrow">A SPACE FOR EVERY READER</p>
+                <h2>Read freely.<br><span>Respect the pages.</span></h2>
+                <p>Help us keep the library welcoming, peaceful and full of discovery.</p>
+            </div>
+
+            <div class="rules-list">
+                <article class="rule">
+                    <span>01</span>
+                    <div><h3>Borrowing period</h3><p>Members may borrow up to 3 books for 14 days.</p></div>
+                </article>
+                <article class="rule">
+                    <span>02</span>
+                    <div><h3>Return on time</h3><p>Return or renew books before the due date to avoid late fees.</p></div>
+                </article>
+                <article class="rule">
+                    <span>03</span>
+                    <div><h3>Care for every book</h3><p>Keep pages clean. Do not write, tear, or damage library materials.</p></div>
+                </article>
+                <article class="rule">
+                    <span>04</span>
+                    <div><h3>Keep it peaceful</h3><p>Silence phones and respect other readers' study time.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Membership Form -->
+        <section class="membership-section" id="membership">
+            <div>
+                <p class="eyebrow">YOUR READING JOURNEY STARTS NOW</p>
+                <h2>Become part of<br>our <span>book-loving community.</span></h2>
+                <p>Leave your details to register your interest in library membership.</p>
+            </div>
+            <form id="membershipForm">
+                <label for="memberName">Full name</label>
+                <input type="text" id="memberName" placeholder="Enter your name" required>
+
+                <label for="memberEmail">Email address</label>
+                <input type="email" id="memberEmail" placeholder="you@example.com" required>
+
+                <label for="memberInterest">Favourite category</label>
+                <select id="memberInterest">
+                    <option>Fiction</option>
+                    <option>Self-Help</option>
+                    <option>Technology</option>
+                    <option>Classics</option>
+                </select>
+
+                <button type="submit" class="primary-button">Submit Interest ↗</button>
+                <p id="formMessage" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#home" class="logo">PAGE <span>&</span> PETAL</a>
+        <p>Designed for curious minds. Built for book lovers.</p>
+        <p>© 2026 Page & Petal — Student Web Design Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
